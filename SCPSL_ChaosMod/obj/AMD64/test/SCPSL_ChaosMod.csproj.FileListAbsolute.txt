@@ -1,0 +1,2 @@
+C:\Users\Maciej\Desktop\RiderProjects\SCPSL_ChaosMod\SCPSL_ChaosMod\obj\AMD64\test\SCPSL_ChaosMod.csproj.AssemblyReference.cache
+C:\Users\Maciej\Desktop\RiderProjects\SCPSL_ChaosMod\SCPSL_ChaosMod\obj\AMD64\test\SCPSL_ChaosMod.csproj.CoreCompileInputs.cache

@@ -1,9 +1,9 @@
 ﻿using Player = Exiled.API.Features.Player;
 using ChaosMod.Modifiers;
 using Exiled.API.Enums;
-public class XRay : Base
+public class GhostParty : Base
 {
-	private string name = "XRay";
+	private string name = "Ghost Party";
 
 	public override string GetName()
 	{
@@ -14,7 +14,7 @@ public class XRay : Base
 	{
 		foreach (var player in Player.List)
 		{
-			player.EnableEffect(EffectType.Visuals939, 60f);
+			player.EnableEffect(EffectType.Invisible, 60f);
 		}
 	}
 	public override void RevertChanges()

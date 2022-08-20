@@ -1,8 +1,15 @@
-﻿using Player = Exiled.API.Features.Player;
+﻿using System;
+using Player = Exiled.API.Features.Player;
 using ChaosMod.Modifiers;
-public class BypassForAll : Base
+using CommandSystem.Commands.RemoteAdmin;
+using Exiled.API.Enums;
+using Exiled.API.Features.Items;
+using InventorySystem.Items;
+using InventorySystem.Items.Firearms;
+
+public class Hitman : Base
 {
-	private string name = "Who needs keycards anyway?";
+	private string name = "Hitmen";
 
 	public override string GetName()
 	{
@@ -13,14 +20,11 @@ public class BypassForAll : Base
 	{
 		foreach (var player in Player.List)
 		{
-			player.IsBypassModeEnabled = true;
+			ItemType com = ItemType.GunCOM15;
+			Item.Create(com).Give(player);
 		}
 	}
 	public override void RevertChanges()
 	{
-		foreach (var player in Player.List)
-		{
-			player.IsBypassModeEnabled = false;
-		}
 	}
 }

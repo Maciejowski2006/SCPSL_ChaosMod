@@ -1,9 +1,9 @@
 ﻿using Player = Exiled.API.Features.Player;
 using ChaosMod.Modifiers;
 using Exiled.API.Enums;
-public class XRay : Base
+public class IAmSpeed : Base
 {
-	private string name = "X-Ray";
+	private string name = "I am speed";
 
 	public override string GetName()
 	{
@@ -14,10 +14,14 @@ public class XRay : Base
 	{
 		foreach (var player in Player.List)
 		{
-			player.EnableEffect(EffectType.Visuals939, 60f);
+			player.EnableEffect(EffectType.Scp207, 60f);
 		}
 	}
 	public override void RevertChanges()
 	{
+		foreach (var player in Player.List)
+		{
+			player.DisableEffect(EffectType.Scp207);
+		}
 	}
 }

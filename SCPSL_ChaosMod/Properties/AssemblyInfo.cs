@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SCPSL_ChaosMod")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("ChaosMod")]
+[assembly: AssemblyDescription("Chaos mod for SCP Secret Laboratory inspired by GTAV/SA Chaos Mod")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SCPSL_ChaosMod")]
-[assembly: AssemblyCopyright("Copyright ©  2022")]
+[assembly: AssemblyCompany("Maciejowski")]
+[assembly: AssemblyProduct("ChaosMod")]
+[assembly: AssemblyCopyright("Copyright © Maciejowski 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -22,14 +22,8 @@ using System.Runtime.InteropServices;
 [assembly: Guid("1A2B4BFC-2878-4434-BC84-9FE2924DF106")]
 
 // Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("0.1.0.0")]
+[assembly: AssemblyFileVersion("0.1.0.0")]

@@ -1,8 +1,8 @@
-﻿using Player = Exiled.API.Features.Player;
-using ChaosMod.Modifiers;
-public class BypassForAll : Base
+﻿using ChaosMod.Modifiers;
+
+public class InfinitePower : Base
 {
-	private string name = "Who needs keycards anyway?";
+	private string name = "Infinite Power";
 
 	public override string GetName()
 	{
@@ -11,16 +11,18 @@ public class BypassForAll : Base
 
 	public override void Execute()
 	{
-		foreach (var player in Player.List)
+		foreach (var tesla in Exiled.API.Features.TeslaGate.List)
 		{
-			player.IsBypassModeEnabled = true;
+			tesla.ActivationTime = 0f;
+			tesla.CooldownTime = 0;
 		}
 	}
 	public override void RevertChanges()
 	{
-		foreach (var player in Player.List)
+		foreach (var tesla in Exiled.API.Features.TeslaGate.List)
 		{
-			player.IsBypassModeEnabled = false;
+			tesla.ActivationTime = 1f;
+			tesla.CooldownTime = 1f;
 		}
 	}
 }

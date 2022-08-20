@@ -1,8 +1,9 @@
 ﻿using Player = Exiled.API.Features.Player;
 using ChaosMod.Modifiers;
-public class BypassForAll : Base
+using Exiled.API.Enums;
+public class XRay : Base
 {
-	private string name = "Who needs keycards anyway?";
+	private string name = "X-Ray";
 
 	public override string GetName()
 	{
@@ -13,14 +14,10 @@ public class BypassForAll : Base
 	{
 		foreach (var player in Player.List)
 		{
-			player.IsBypassModeEnabled = true;
+			player.EnableEffect(EffectType.Visuals939, 60f);
 		}
 	}
 	public override void RevertChanges()
 	{
-		foreach (var player in Player.List)
-		{
-			player.IsBypassModeEnabled = false;
-		}
 	}
 }

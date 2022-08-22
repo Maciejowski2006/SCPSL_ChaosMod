@@ -29,14 +29,6 @@ namespace ChaosMod.Handlers
 			}
 			modifierAPI.RemoveModifier();
 			didRoundEnded = false;
-
-			/*for (;;)
-			{
-				yield return Timing.WaitForSeconds(ChaosMod.Instance.Config.delay);
-				
-				modifierAPI.GenerateNewModifier();				
-			}*/
-
 		}
 	}
 }

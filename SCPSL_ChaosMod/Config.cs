@@ -1,7 +1,6 @@
-﻿
-
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using Exiled.API.Interfaces;
+
 namespace ChaosMod
 {
 	public class Config : IConfig

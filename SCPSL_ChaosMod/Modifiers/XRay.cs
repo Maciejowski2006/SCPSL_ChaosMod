@@ -14,7 +14,10 @@ public class XRay : Base
 	{
 		foreach (var player in Player.List)
 		{
-			player.EnableEffect(EffectType.Visuals939, 60f);
+			if (player.Role != RoleType.Scp93953 || player.Role != RoleType.Scp93989)
+			{
+				player.EnableEffect(EffectType.Visuals939, 60f);
+			}
 		}
 	}
 	public override void RevertChanges()

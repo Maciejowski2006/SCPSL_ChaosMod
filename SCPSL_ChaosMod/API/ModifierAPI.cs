@@ -7,8 +7,9 @@ namespace ChaosMod.API
 {
 	public class ModifierAPI
 	{
-		public List<Base> modifiers = new List<Base>();
-		private Base oldModifier = null;
+		private List<Base> modifiers = new List<Base>();
+		private Base oldModifier;
+		
 		public ModifierAPI()
 		{
 			BypassForAll bypassForAll = new BypassForAll();
@@ -29,10 +30,8 @@ namespace ChaosMod.API
 			modifiers.Add(infinitePower);
 			modifiers.Add(ninetyFourInSix);
 		}
-		public void GenerateNewModifier()
+		private Base RollModifier()
 		{
-			RemoveModifier();
-			
 			// Roll new modifier
 			int modifierIndex = Random.Range(0, modifiers.Count);
 			Base currentModifier;
@@ -50,11 +49,19 @@ namespace ChaosMod.API
 			}
 			
 			oldModifier = currentModifier;
-			
-			currentModifier.Execute();
-			AnnounceNewModifier(currentModifier);
+
+			return currentModifier;
 		}
-		public void AnnounceNewModifier(Base modifier)
+		public void NewModifier()
+		{
+			RemoveModifier();
+
+			Base modifier = RollModifier();
+
+			modifier.Execute();
+			AnnounceNewModifier(modifier);
+		}
+		private void AnnounceNewModifier(Base modifier)
 		{
 			Log.Info($"New modifier: {modifier.GetName()}");
 			Map.Broadcast(5, $"New modifier: {modifier.GetName()}");

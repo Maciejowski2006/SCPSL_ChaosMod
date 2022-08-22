@@ -25,7 +25,7 @@ namespace ChaosMod.Handlers
 			{
 				yield return Timing.WaitForSeconds(ChaosMod.Instance.Config.delay);
 				
-				modifierAPI.GenerateNewModifier();
+				modifierAPI.NewModifier();
 			}
 			modifierAPI.RemoveModifier();
 			didRoundEnded = false;

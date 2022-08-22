@@ -22,3 +22,6 @@ I advise to not check the list, and checkout the modifiers in the game instead.
 1. Install [EXILED](https://github.com/Exiled-Team/EXILED) on your server
 2. Download plugin from [releases page](https://github.com/Maciejowski2006/SCPSL_ChaosMod/releases/) and move it to plugins folder: `(Windows: C:\Users\<your_username>\AppData\Roaming\EXILED\Plugins | Linux: ~/.config/EXILED/Plugins)`
 3. If you want to tweak it the config is in following file: `(Windows: C:\Users\<your_username>\AppData\Roaming\EXILED\Plugins | Linux: ~/.config/EXILED/Configs/<server-port>-config.yml)`
+
+## Contributing
+You've got an idea for a great modification? Cool! Create a new issue with `Modifier Request` template and tell us what you want!

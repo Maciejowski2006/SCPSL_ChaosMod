@@ -14,7 +14,7 @@ public class IAmSpeed : Base
 	{
 		foreach (var player in Player.List)
 		{
-			player.EnableEffect(EffectType.Scp207, 60f);
+			player.EnableEffect(EffectType.Scp207, ChaosMod.ChaosMod.Instance.Config.delay);
 		}
 	}
 	public override void RevertChanges()

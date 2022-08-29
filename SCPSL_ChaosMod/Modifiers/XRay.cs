@@ -16,7 +16,7 @@ public class XRay : Base
 		{
 			if (player.Role != RoleType.Scp93953 || player.Role != RoleType.Scp93989)
 			{
-				player.EnableEffect(EffectType.Visuals939, 60f);
+				player.EnableEffect(EffectType.Visuals939, ChaosMod.ChaosMod.Instance.Config.delay);
 			}
 		}
 	}

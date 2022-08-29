@@ -14,7 +14,7 @@ public class GhostParty : Base
 	{
 		foreach (var player in Player.List)
 		{
-			player.EnableEffect(EffectType.Invisible, 60f);
+			player.EnableEffect(EffectType.Invisible, ChaosMod.ChaosMod.Instance.Config.delay);
 		}
 	}
 	public override void RevertChanges()

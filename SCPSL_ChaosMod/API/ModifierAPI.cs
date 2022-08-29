@@ -7,8 +7,30 @@ namespace ChaosMod.API
 {
 	public class ModifierAPI
 	{
+		#region Singleton
+		
+		private static ModifierAPI instance;
+		private static readonly object _lock = new object();
+
+		public static ModifierAPI Instance()
+		{
+			if (instance == null)
+			{
+				lock (_lock)
+				{
+					if (instance == null)
+					{
+						instance = new ModifierAPI();
+					}
+				}
+			}
+			return instance;
+		}
+		
+		#endregion
 		private List<Base> modifiers = new List<Base>();
 		private Base oldModifier;
+		public int forceNextModifier = -1;
 		
 		public ModifierAPI()
 		{
@@ -37,7 +59,12 @@ namespace ChaosMod.API
 			Base currentModifier;
 			
 			// Check if forcemod is set to any number apart from -1
-			if (ChaosMod.Instance.Config.forceMod != -1)
+			if (forceNextModifier != -1)
+			{
+				currentModifier = modifiers[forceNextModifier];
+				forceNextModifier = -1;
+			}
+			else if (ChaosMod.Instance.Config.forceMod != -1)
 			{
 				// Force a modifier with number from config
 				currentModifier = modifiers[ChaosMod.Instance.Config.forceMod];

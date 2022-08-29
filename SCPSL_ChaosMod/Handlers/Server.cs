@@ -20,14 +20,15 @@ namespace ChaosMod.Handlers
 		{
 			
 			ModifierAPI modifierAPI = new ModifierAPI();
+			ModifierAPI api = ModifierAPI.Instance();
 
 			while (!didRoundEnded)
 			{
 				yield return Timing.WaitForSeconds(ChaosMod.Instance.Config.delay);
 				
-				modifierAPI.NewModifier();
+				api.NewModifier();
 			}
-			modifierAPI.RemoveModifier();
+			api.RemoveModifier();
 			didRoundEnded = false;
 		}
 	}
